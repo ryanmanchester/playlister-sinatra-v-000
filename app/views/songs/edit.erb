@@ -6,6 +6,9 @@
   <% Artist.all.each do |artist| %>
     <input type="radio" name="artist_id" id="<%= artist.id %>" value="<%= artist.id %>"<%= 'checked' if @song.artist == artist %>><%= artist.name %><br></input>
   <% end %>
+  <br></br>
+  
   <h3>or create a new artist: </h3>
+
 
 </form>

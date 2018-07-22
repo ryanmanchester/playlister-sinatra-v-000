@@ -4,6 +4,6 @@
   <h3>Name: <input type="text" name="Name" placeholder="<%= @song.name %>"></h3>
   <h3>Choose an existing artist:</h3>
   <% Artist.all.each do |artist| %>
-    <input type="radio" name="Artist Name" id="<%= artist.id %>" value="<%= artist.id %>"<%= 'checked' if @song.artsit == artist %>><%= artist.name %><br></input>
+    <input type="radio" name="Artist Name" id="<%= artist.id %>" value="<%= artist.id %>"<%= 'checked' if @song.artist == artist %>><%= artist.name %><br></input>
   <% end %>
 </form>

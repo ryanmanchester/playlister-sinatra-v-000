@@ -13,16 +13,11 @@ use Rack::Flash
 
   post '/songs' do
     @song = Song.create(name: params["Name"])
-
-  #  if !params["Artist Name"].empty?
-      @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
-  #  end
-
+    @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
     @song.genre_ids = params[:genres]
     @song.save
-#binding.pry
+
     flash[:message] = "Successfully created song."
-    #binding.pry
     redirect  "/songs/#{@song.slug}"
   end
 

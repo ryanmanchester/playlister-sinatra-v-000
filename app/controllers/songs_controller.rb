@@ -27,7 +27,7 @@ use Rack::Flash
   end
 
   get '/songs/:slug/edit' do
-    @song = Song.find(params[:id])
+    @song = Song.find_by(name: params["Name"])
     erb :'/songs/edit'
   end
 end

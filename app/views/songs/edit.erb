@@ -1,2 +1,3 @@
 <h1>Update a Song</h1>
 <form action="/songs/<%= @song.slug %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">

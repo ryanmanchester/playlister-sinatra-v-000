@@ -5,9 +5,10 @@
   </head>
 
   <body>
-    <%= yield %>
     <% if flash.has?(:message) %>
   <%= flash[:message] %>
 <% end %>
+    <%= yield %>
+
   </body>
 </html>

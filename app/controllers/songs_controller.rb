@@ -34,6 +34,7 @@ use Rack::Flash
   patch '/songs/:slug' do
 
     @song = Song.find_by_slug(params["slug"])
+    binding.pry
     @song.name = params["Name"]
     @song.artist = params["Artist Name"]
     @song.genre_ids = params[:genres]

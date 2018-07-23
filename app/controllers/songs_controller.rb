@@ -34,7 +34,7 @@ use Rack::Flash
   patch '/songs/:slug' do
 
     @song = Song.find_by_slug(params["slug"])
-    @song.update(artist: params["Artist Name"], genre: params["genres"])
+    @song.update(artist: params["Artist Name"], genre_ids: params["genres"])
 
 
 

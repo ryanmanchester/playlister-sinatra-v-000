@@ -7,7 +7,6 @@ use Rack::Flash
   end
 
   get '/songs/new' do
-
     erb :'/songs/new'
   end
 

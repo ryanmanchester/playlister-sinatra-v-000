@@ -38,6 +38,7 @@ use Rack::Flash
     @song.name = params["Name"]
     #binding.pry
     @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
+    binding.pry
     @song.genre_ids = params[:genres]
     @song.save
     flash[:message] = "Successfully updated song."

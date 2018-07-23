@@ -33,19 +33,17 @@ use Rack::Flash
   patch '/songs/:slug' do
 #binding.pry
     @song = Song.find_by_slug(params["slug"])
-    #binding.pry
     @song.name = params["Name"]
-    #binding.pry
+
     if params["Artist Name"] != ""
-    @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
-  else
-    @song.artist = Artist.find(params["artist_id"])
-    binding.pry
-  end
-    #binding.pry
+      @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
+    else
+      @song.artist = Artist.find(params["artist_id"])
+    end
+
     @song.genre_ids = params[:genres]
-    #binding.pry
     @song.save
+    
     flash[:message] = "Successfully updated song."
     redirect "/songs/#{@song.slug}"
   end

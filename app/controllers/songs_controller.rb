@@ -40,6 +40,7 @@ use Rack::Flash
     @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
   else
     @song.artist = Artist.find(params["artist_id"])
+    binding.pry
   end
     #binding.pry
     @song.genre_ids = params[:genres]

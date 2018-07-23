@@ -34,7 +34,7 @@ use Rack::Flash
   patch '/songs/:slug' do
     @song = Song.find_by_slug(params["slug"])
     binding.pry
-    @song.update(name: params["Name"])
+    @song.update(name: params["Name"], artist_id: params["artist_id"], genre_ids: params["genres"])
     redirect "/songs/#{@song.slug}"
   end
 end

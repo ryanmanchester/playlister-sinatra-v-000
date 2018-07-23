@@ -10,6 +10,7 @@
 
   <h3>Update Genre:</h3>
   <% Genre.all.each do |genre| %>
+    <input id="<%= genre.name %>" type="checkbox" name="genres[]" value="<%= genre.id %>" <%= 'checked' @song.genre_ids.include?(genre.id) %>><%= genre.name %></input>
   <% end %>
 
   <h3>or create a new artist: <input type="text" name="Artist Name"></input></h3>

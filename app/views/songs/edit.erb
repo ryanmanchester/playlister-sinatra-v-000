@@ -14,7 +14,7 @@
     <input id="<%= genre.name %>" type="checkbox" name="genres[]" value="<%= genre.id %>" <%= 'checked' if @song.genre_ids.include?(genre.id) %>><%= genre.name %></input>
   <% end %>
 
-  <h3>or create a new artist: <input type="text" name="Artist Name"></input></h3>
+  <h3>or create a new artist: <input type="text" name="artist_name"></input></h3>
   <input type="submit" value="Save"></input>
 
 

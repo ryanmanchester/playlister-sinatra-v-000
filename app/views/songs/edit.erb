@@ -1,6 +1,7 @@
 <h1>Update a Song</h1>
 <form action="/songs/<%= @song.slug %>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
+
   <h3>Name: <input type="text" name="Name" placeholder="<%= @song.name %>"></h3>
   <h3>Update with an existing artist:</h3>
   <% Artist.all.each do |artist| %>

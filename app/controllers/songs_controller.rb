@@ -34,7 +34,8 @@ use Rack::Flash
   patch '/songs/:slug' do
 
     @song = Song.find_by_slug(params["slug"])
-    binding.pry
+    @song.update(artist: params["Artist Name"], genre: params["genres"])
+
 
 
     flash[:message] = "Successfully updated song."

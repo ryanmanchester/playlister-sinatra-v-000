@@ -39,7 +39,7 @@ binding.pry
     if params["Artist Name"]
     @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
   else
-    @song.artist = Artist.find(:id)
+    @song.artist = Artist.find(params["artist_id"])
   end
     #binding.pry
     @song.genre_ids = params[:genres]

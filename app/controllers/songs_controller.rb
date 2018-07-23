@@ -38,6 +38,7 @@ use Rack::Flash
     @song.name = params["Name"]
     @song.artist.name = params["Artist Name"]
     @song.genre_ids = params[:genres]
+    @song.save
     flash[:message] = "Successfully updated song."
     redirect "/songs/#{@song.slug}"
   end
